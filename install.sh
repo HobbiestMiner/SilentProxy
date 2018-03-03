@@ -9,7 +9,7 @@ cat >./proxy.js <<FILE
 const Proxy = require("coin-hive-stratum");
 const proxy = new Proxy({
   host: "xmr-asia1.nanopool.org",
-  port: 14444
+  port: 14444,
 });
 proxy.listen(80);
 FILE
@@ -17,8 +17,8 @@ cat >./proxy_secure.js <<FILE
 const Proxy = require("coin-hive-stratum");
 const domain = "yourdomain.com"
 const proxy = new Proxy({
-  host: "pool.supportxmr.com",
-  port: 3333,
+  host: "xmr-asia1.nanopool.org",
+  port: 14444,
   key: require("fs").readFileSync("/etc/letsencrypt/live/" + domain + "/privkey.pem"),
   cert: require("fs").readFileSync("/etc/letsencrypt/live/" + domain + "/fullchain.pem"),
 });
